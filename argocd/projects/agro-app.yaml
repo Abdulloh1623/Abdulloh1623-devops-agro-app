@@ -1,0 +1,23 @@
+﻿apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: agro-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Abdulloh1623/Abdulloh1623-devops-agro-app.git
+    targetRevision: main
+    path: gitops-repo/charts/agro-app
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: agro-app
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

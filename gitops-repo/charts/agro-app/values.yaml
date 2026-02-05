@@ -1,0 +1,16 @@
+﻿replicaCount: 1
+
+image:
+  repository: abuseven/agro-app
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 5000
+  name: web
+
+resources: {}
+
+env: {}
