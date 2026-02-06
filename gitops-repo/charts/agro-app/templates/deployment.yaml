@@ -30,17 +30,14 @@ spec:
 
           readinessProbe:
             httpGet:
-              path: {{ .Values.probes.readinessPath | default "/health" }}
+              path: {{ .Values.probes.readinessPath | default "/health" | quote }}
               port: web
-            initialDelaySeconds: {{ .Values.probes.readinessInitialDelaySeconds | default 5 }}
-            periodSeconds: {{ .Values.probes.readinessPeriodSeconds | default 10 }}
 
           livenessProbe:
             httpGet:
-              path: {{ .Values.probes.livenessPath | default "/health" }}
+              path: {{ .Values.probes.livenessPath | default "/health" | quote }}
               port: web
-            initialDelaySeconds: {{ .Values.probes.livenessInitialDelaySeconds | default 15 }}
-            periodSeconds: {{ .Values.probes.livenessPeriodSeconds | default 20 }}
+
 
           env:
             - name: PORT
