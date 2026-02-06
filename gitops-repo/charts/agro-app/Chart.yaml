@@ -1,6 +1,12 @@
-﻿apiVersion: v2
+apiVersion: v2
 name: agro-app
-description: Agro App (Flask) Helm chart
+description: Agro App Helm Chart
 type: application
 version: 0.1.0
 appVersion: "1.0.0"
+
+dependencies:
+  - name: postgresql
+    version: 15.5.38
+    repository: https://charts.bitnami.com/bitnami
+    condition: postgresql.enabled
