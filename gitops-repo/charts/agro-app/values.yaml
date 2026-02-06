@@ -18,3 +18,7 @@ metrics:
 serviceAccount:
   create: true
   name: ""
+
+probes:
+  readinessPath: /health
+  livenessPath: /health
