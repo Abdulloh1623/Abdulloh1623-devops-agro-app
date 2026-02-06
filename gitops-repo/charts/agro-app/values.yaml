@@ -14,3 +14,7 @@ service:
 metrics:
   enabled: true
   path: /metrics
+
+serviceAccount:
+  create: true
+  name: ""
