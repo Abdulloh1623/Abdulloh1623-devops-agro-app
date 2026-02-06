@@ -1,8 +1,8 @@
-﻿replicaCount: 3
+replicaCount: 3
 
 image:
-  repository: abuseven/agro-app
-  tag: latest
+  repository: YOUR_DOCKERHUB_USER/agro-app
+  tag: "latest"
   pullPolicy: IfNotPresent
 
 service:
@@ -11,6 +11,21 @@ service:
   targetPort: 5000
   name: web
 
-resources: {}
+metrics:
+  enabled: true
+  path: /metrics
 
-env: {}
+postgresql:
+  enabled: true
+  auth:
+    username: agro
+    password: agro-pass-123
+    database: agrodb
+  primary:
+    persistence:
+      enabled: true
+      size: 1Gi
+
+externalDatabase:
+  enabled: false
+  url: ""
