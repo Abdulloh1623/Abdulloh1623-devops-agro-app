@@ -1,7 +1,7 @@
 replicaCount: 3
 
 image:
-  repository: YOUR_DOCKERHUB_USER/agro-app
+  repository: abdulloh1623/agro-app
   tag: "latest"
   pullPolicy: IfNotPresent
 
@@ -14,18 +14,3 @@ service:
 metrics:
   enabled: true
   path: /metrics
-
-postgresql:
-  enabled: true
-  auth:
-    username: agro
-    password: agro-pass-123
-    database: agrodb
-  primary:
-    persistence:
-      enabled: true
-      size: 1Gi
-
-externalDatabase:
-  enabled: false
-  url: ""
