@@ -15,7 +15,7 @@ spec:
         {{- include "agro-app.selectorLabels" . | nindent 8 }}
       annotations:
         prometheus.io/scrape: "true"
-        prometheus.io/path: "/metrics"
+        prometheus.io/path: "{{ .Values.metrics.path | default "/metrics" }}"
         prometheus.io/port: "{{ .Values.service.targetPort | default 5000 }}"
     spec:
       serviceAccountName: {{ include "agro-app.serviceAccountName" . }}
@@ -27,20 +27,30 @@ spec:
             - name: web
               containerPort: {{ .Values.service.targetPort | default 5000 }}
               protocol: TCP
+
           readinessProbe:
             httpGet:
-              path: /health
+              path: {{ .Values.probes.readinessPath | default "/health" }}
               port: web
-            initialDelaySeconds: 5
-            periodSeconds: 10
+            initialDelaySeconds: {{ .Values.probes.readinessInitialDelaySeconds | default 5 }}
+            periodSeconds: {{ .Values.probes.readinessPeriodSeconds | default 10 }}
+
           livenessProbe:
             httpGet:
-              path: /health
+              path: {{ .Values.probes.livenessPath | default "/health" }}
               port: web
-            initialDelaySeconds: 15
-            periodSeconds: 20
+            initialDelaySeconds: {{ .Values.probes.livenessInitialDelaySeconds | default 15 }}
+            periodSeconds: {{ .Values.probes.livenessPeriodSeconds | default 20 }}
+
           env:
             - name: PORT
               value: "{{ .Values.service.targetPort | default 5000 }}"
+
+          {{- if .Values.env }}
+          {{- toYaml .Values.env | nindent 12 }}
+          {{- end }}
+
+          {{- if .Values.resources }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          {{- end }}
