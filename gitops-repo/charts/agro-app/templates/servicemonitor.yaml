@@ -1,7 +1,7 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: {{ include "agro-app.fullname" . }}
+  name: agro-app
   labels:
     release: kube-prometheus-stack
     app: agro-app
