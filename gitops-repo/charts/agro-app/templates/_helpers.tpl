@@ -7,38 +7,35 @@ Expand the name of the chart.
 
 {{/*
 Create a default fully qualified app name.
-If fullnameOverride is set, use it.
-Else: <release-name>-<chart-name>
 */}}
 {{- define "agro-app.fullname" -}}
 {{- if .Values.fullnameOverride -}}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" -}}
 {{- else -}}
-{{- $name := default .Chart.Name .Values.nameOverride -}}
+{{- $name := include "agro-app.name" . -}}
+{{- if contains $name .Release.Name -}}
+{{- .Release.Name | trunc 63 | trimSuffix "-" -}}
+{{- else -}}
 {{- printf "%s-%s" .Release.Name $name | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 {{- end -}}
-
-{{/*
-Chart label: <chart-name>-<chart-version>
-*/}}
-{{- define "agro-app.chart" -}}
-{{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
 {{/*
 Common labels
 */}}
 {{- define "agro-app.labels" -}}
-helm.sh/chart: {{ include "agro-app.chart" . }}
+helm.sh/chart: {{ printf "%s-%s" .Chart.Name (.Chart.Version | replace "+" "_") }}
 app.kubernetes.io/name: {{ include "agro-app.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
+{{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+{{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end -}}
 
 {{/*
-Selector labels (stable)
+Selector labels
 */}}
 {{- define "agro-app.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "agro-app.name" . }}
@@ -46,12 +43,14 @@ app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end -}}
 
 {{/*
-ServiceAccount name
+ServiceAccount name (SAFE: works even if .Values.serviceAccount is missing)
 */}}
 {{- define "agro-app.serviceAccountName" -}}
-{{- if .Values.serviceAccount.create -}}
-{{- default (include "agro-app.fullname" .) .Values.serviceAccount.name -}}
+{{- $sa := default (dict) .Values.serviceAccount -}}
+{{- $create := default true $sa.create -}}
+{{- if $create -}}
+{{- default (include "agro-app.fullname" .) $sa.name -}}
 {{- else -}}
-{{- default "default" .Values.serviceAccount.name -}}
+{{- default "default" $sa.name -}}
 {{- end -}}
 {{- end -}}
