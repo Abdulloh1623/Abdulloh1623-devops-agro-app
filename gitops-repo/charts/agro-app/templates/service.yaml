@@ -12,3 +12,4 @@ spec:
     - name: web
       port: {{ .Values.service.port | default 80 }}
       targetPort: {{ .Values.service.targetPort | default 5000 }}
+      protocol: TCP
