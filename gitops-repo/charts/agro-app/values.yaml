@@ -1,7 +1,7 @@
 replicaCount: 3
 
 image:
-  repository: abdulloh1623/agro-app
+  repository: abuseven/agro-app
   tag: "latest"
   pullPolicy: IfNotPresent
 
