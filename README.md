@@ -122,10 +122,9 @@ Then in ArgoCD UI:
 
 ### ✅ Expected ArgoCD View
 
-<img width="1280" height="743" alt="image" src="https://github.com/user-attachments/assets/be452da1-f6d0-4d93-8392-8f7f8e0db362" />
+> <img width="1280" height="743" alt="image" src="https://github.com/user-attachments/assets/be452da1-f6d0-4d93-8392-8f7f8e0db362" />
 
-
-> 👉 Put your ArgoCD screenshot inside `<img width="1280" height="797" alt="image" src="https://github.com/user-attachments/assets/fabb96a8-cd35-4bc1-be15-0d7e467c77fa" />`
+> <img width="1280" height="797" alt="image" src="https://github.com/user-attachments/assets/fabb96a8-cd35-4bc1-be15-0d7e467c77fa" />
 
 ---
 
@@ -147,11 +146,7 @@ Login:
 
 ### Example Grafana Dashboard
 
-<img width="2559" height="1477" alt="image" src="https://github.com/user-attachments/assets/1a25c07a-9b79-4217-86a6-9b7f5ad78bd6" />
-
-
-> 👉 Put your Grafana screenshot inside `<img width="2559" height="1477" alt="image" src="https://github.com/user-attachments/assets/7124986d-ec1e-45d9-ae37-8da6113dd84a" />
-`
+> <img width="2559" height="1477" alt="image" src="https://github.com/user-attachments/assets/1a25c07a-9b79-4217-86a6-9b7f5ad78bd6" />
 
 ---
 
@@ -213,49 +208,33 @@ In Grafana:
 ## 👨‍💻 Author
 
 **Your Name**
-GitHub: [https://github.com/YOUR_USERNAME](https://github.com/YOUR_USERNAME)
+GitHub: [https://github.com/YOUR_USERNAME](https://github.com/Abdulloh1623)
 
-```
+## Some screenshotes from Grafana dashboards
 
----
 
-# 📸 **QAYERGA RASM QO‘YISH KERAK?**
+> <img width="1280" height="824" alt="image" src="https://github.com/user-attachments/assets/f9333aec-ece8-40a3-8c0f-7eb7e532b1a5" />
 
-GitHub repo ichida shunday papka yarating:
 
-```
+> <img width="1280" height="820" alt="image" src="https://github.com/user-attachments/assets/e3c9c853-8288-4bdd-9dc3-3a8c76ae35ed" />
 
-/screenshots/
 
-```
+> <img width="1280" height="825" alt="image" src="https://github.com/user-attachments/assets/ac38f428-37ab-4ae7-9c61-2064491de0ec" />
 
-Ichiga 2 ta rasm qo‘ying:
 
-1️⃣ **ArgoCD dashboard screenshot**
-```
+> <img width="1280" height="825" alt="image" src="https://github.com/user-attachments/assets/088041df-a745-4107-843f-9e98b85be163" />
 
-screenshots/argocd-dashboard.png
 
-```
+> <img width="1280" height="824" alt="image" src="https://github.com/user-attachments/assets/32f9ad92-83e5-4fba-8f3c-3bd9ddf5d2b9" />
 
-2️⃣ **Grafana dashboard screenshot**
-```
 
-screenshots/grafana-dashboard.png
+> <img width="1280" height="364" alt="image" src="https://github.com/user-attachments/assets/7a97144d-95c5-4d36-bbc4-80f23b90e9ee" />
 
-```
 
-Keyin GitHub README’da ular avtomatik ko‘rinadi ✅
+> <img width="1280" height="411" alt="image" src="https://github.com/user-attachments/assets/ee7da671-18c7-4ca4-96b9-2086c144abb7" />
 
----
 
-# 🎯 Agar xohlasangiz:
-Men siz uchun:
+> <img width="1280" height="607" alt="image" src="https://github.com/user-attachments/assets/e5e1c976-e987-4165-aa78-0ba288981f39" />
 
-- README’ni **docx** yoki **pdf** qilib beraman  
-- yoki  
-- to‘g‘ridan-to‘g‘ri **GitHub repo’ngizga moslab tahrirlab beraman**
 
-Aytishingiz kifoya:  
-👉 **“GitHub repoga moslab ber”**
-```
+> <img width="1280" height="512" alt="image" src="https://github.com/user-attachments/assets/44572ccb-b25b-497a-bf90-c4700788fb6f" />
